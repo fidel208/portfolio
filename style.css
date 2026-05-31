@@ -39,6 +39,11 @@ nav > h1 {
   font-size: 26px;
   font-weight: 700;
 }
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  color: #f3eeff;
+}
 .links {
   display: flex;
   align-items: center;
@@ -262,12 +267,12 @@ main {
 }
 #projects > p {
   color: #b3aaff;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
+  gap: 50px;
 }
 .project {
   background-color: #160f35;
@@ -285,33 +290,54 @@ main {
   background-size: cover;
   background-position: center;
   border-bottom: 1px solid rgba(139, 92, 246, 0.1);
-}
-.memory {
-  background-image: url(images/memory.png);
-}
-.fineapp {
-  background-image: url(images/fineapp.png);
-}
-.imessage {
-  background-image: url(images/imessage.png);
-}
-.logo {
-  background-image: url(images/Mwitixon.png);
-}
-.gle {
-  background-image: url(images/Ps_poster.png);
-}
-.fred {
-  background-image: url(images/FCDS.png);
+  background-image: url(images/projectbg.jpg);
 }
 #project-details {
   display: block;
   padding: 20px;
   flex-grow: 1;
 }
+#project-details > h3 {
+  color: #f3eeff;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+#project-details > p {
+  color: #b3aaff;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
 #project-buttons {
-  display: block;
+  display: flex;
+  gap: 20px;
   padding: 0 20px 20px 20px;
+}
+#project-buttons > button {
+  background-color: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#project-buttons > button > a {
+  color: #f3eeff;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+#project-buttons > button:hover {
+  background-color: #8b5cf6;
+  border-color: #8b5cf6;
+  transform: translateY(-2px);
 }
 
 #contact {
@@ -433,11 +459,29 @@ footer {
   font-weight: 500;
   color: #f3eeff;
 }
-.quick {
+.footer-icons {
   display: flex;
-  flex-direction: column;
   gap: 10px;
+  align-self: center;
+}
+.footer-icons > a {
+  color: #f3eeff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.95rem;
+  padding: 14px;
+  background-color: rgba(22, 15, 53, 0.4);
+  border-radius: 8px;
+  border: 1px solid rgba(243, 238, 255, 0.05);
+  transition: all 0.2s ease;
+}
+.footer-icons > a:hover {
+  background-color: #160f35;
+  border-color: #8b5cf6;
   color: #8b5cf6;
+  transform: translateX(4px);
 }
 .quick-links {
   display: flex;
@@ -567,23 +611,68 @@ footer {
 }
 
 @media (max-width: 768px) {
+  html {
+    overflow-x: hidden;
+    height: auto;
+  }
   body {
     font-size: 18px;
+    overflow-x: hidden;
   }
   nav {
     padding: 0 24px;
+    gap: 0;
+    justify-content: space-between;
+    position: fixed !important;
+    top: 0;
+    z-index: 1000;
+    height: 10dvh;
+    background-color: #0b071e;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+  }
+  .menu-icon {
+    display: block;
   }
   .links {
-    gap: 5px;
+    gap: 0px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: auto;
+    width: 150px;
+    right: 0;
+    border-bottom-left-radius: 12px;
+    border-left: 1px solid rgba(139, 92, 246, 0.15);
+    background-color: #0b071e;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+    z-index: 1000;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
   }
   .links > a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
     font-size: 16px;
-    padding: 6px 8px;
+    width: auto;
+    align-self: flex-end;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 16px 32px;
+    margin: 6px 20px;
+    border-radius: 6px;
+    border-bottom: none;
+  }
+  .links.active-menu {
+    max-height: 350px;
   }
   #home {
     flex-direction: column-reverse;
     text-align: center;
-    padding: 40px 24px;
+    padding: calc(40px + 70px) 24px 40px 24px;
     gap: 30px;
     min-height: auto;
     margin-top: 40px;
@@ -609,10 +698,12 @@ footer {
     height: 240px;
   }
   #about,
-  #projects,
   #contact {
-    padding: 60px 24px;
+    padding: 30px 24px;
     gap: 40px;
+  }
+  #projects {
+    padding: 30px 24px;
   }
   .details {
     flex-direction: column;
@@ -650,7 +741,8 @@ footer {
     text-align: center;
   }
   .quick-links {
-    flex-direction: column;
-    gap: 14px;
+    display: flex;
+    flex-direction: row;
+    align-self: center;
   }
 }
