@@ -25,17 +25,6 @@ const sectionObserver = new IntersectionObserver((entries) => {
 
 sections.forEach((section) => sectionObserver.observe(section));
 
-const contactForm = document.querySelector("form");
-
-if (contactForm) {
-  contactForm.addEventListener("submit", function (event) {
-    const nameInput = document.getElementById("name").value;
-
-    alert(
-      `Thank you for reaching out, ${nameInput}! Your message has been sent successfully.`,
-    );
-  });
-}
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
     navLinks.forEach((item) => item.classList.remove("active"));
@@ -66,5 +55,48 @@ if (menuIcon && navLinksContainer) {
       menuIcon.classList.remove("fa-xmark");
       menuIcon.classList.add("fa-bars");
     });
+  });
+}
+
+const contactForm = document.querySelector("form");
+const formStatus = document.getElementById("form-status");
+
+if (contactForm && formStatus) {
+  contactForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const submitButton = contactForm.querySelector("button[type='submit']");
+    const originalButtonText = submitButton.textContent;
+    submitButton.textContent = "Sending...";
+    submitButton.disabled = true;
+
+    formStatus.textContent = "";
+    formStatus.style.opacity = "1";
+
+    emailjs
+      .sendForm("service_uu5o7u7", "template_houqf9x", this)
+      .then(() => {
+        formStatus.style.color = "#10b981";
+        formStatus.textContent =
+          "Message sent successfully! Thank you for reaching out.";
+        contactForm.reset();
+      })
+      .catch((error) => {
+        console.error("Mail Delivery Failure:", error);
+        formStatus.style.color = "#ef4444";
+        formStatus.textContent =
+          "Failed to send message. Please try again or email me directly.";
+      })
+      .finally(() => {
+        submitButton.textContent = originalButtonText;
+        submitButton.disabled = false;
+
+        setTimeout(() => {
+          formStatus.style.opacity = "0";
+          setTimeout(() => {
+            formStatus.textContent = "";
+          }, 300);
+        }, 5000);
+      });
   });
 }
