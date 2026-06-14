@@ -21,7 +21,7 @@ app.post("/api/portfolio-contact", async (req, res) => {
     return res.status(400).json({ error: "Phone number is required" });
   }
 
-  const smsMessage = `Fidel Muthomi: \n Hello ${userName}, thank you for contacting Fidel Muthomi. Fidel will reach out as soon as possible. Keep checking your email for further updates. Good day`;
+  const smsMessage = `Fidel Muthomi:\nHello ${userName}, thank you for contacting Fidel Muthomi. Fidel will reach out as soon as possible. Keep checking your email for further updates. Good day`;
 
   try {
     const result = await sms.send({
