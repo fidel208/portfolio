@@ -84,7 +84,7 @@ if (contactForm && formStatus) {
           "Message sent successfully! Thank you for reaching out.";
 
         if (userNumber) {
-          fetch("https://your-deployed-backend-api.com/api/portfolio-contact", {
+          fetch("/api/portfolio-contact", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
