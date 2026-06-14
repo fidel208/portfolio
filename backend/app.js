@@ -1,10 +1,10 @@
 const express = require("express");
 const cors = require("cors");
-const { Result } = require("pg");
 require("dotenv").config();
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 const credentials = {
   apiKey: process.env.API_KEY,
