@@ -596,6 +596,9 @@ footer {
 .first {
   background-image: url(images/Growssify.png);
 }
+.second {
+  background-image: url(images/kasivodrums.png);
+}
 
 @media (max-width: 1024px) {
   nav {
