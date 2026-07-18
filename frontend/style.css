@@ -26,7 +26,7 @@ nav {
   justify-content: space-evenly;
   gap: 400px;
   width: 100%;
-  height: 10dvh;
+  height: 8dvh;
   padding: 0 80px;
   position: sticky;
   top: 0;
@@ -74,10 +74,10 @@ main {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  min-height: 90dvh;
+  min-height: 92dvh;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 8px 40px;
   gap: 80px;
   width: 100%;
 }
@@ -177,9 +177,10 @@ main {
 #about {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 100px 40px;
+  padding: 80px 40px;
   display: flex;
   flex-direction: column;
+  height: 92dvh;
   gap: 80px;
   width: 100%;
 }
@@ -234,6 +235,10 @@ main {
   padding: 24px;
   border-radius: 10px;
   border: 1px solid rgba(139, 92, 246, 0.1);
+  transition: transform 0.2s ease;
+}
+.skill-info > span:hover {
+  transform: translateY(-5px);
 }
 .skill-info h3 {
   color: #8b5cf6;
@@ -262,9 +267,10 @@ main {
 #projects {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 100px 40px;
+  padding: 8px 40px;
   display: flex;
   flex-direction: column;
+  height: 92dvh;
   gap: 10px;
   width: 100%;
 }
@@ -358,8 +364,9 @@ main {
 #contact {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 100px 40px;
+  padding: 8px 40px;
   width: 100%;
+  height: 92dvh;
   gap: 50px;
 }
 #contact > h2 {
@@ -406,8 +413,8 @@ form input:focus,
 form textarea:focus {
   border-color: #8b5cf6;
 }
-form > textarea {
-  height: 100px;
+form textarea {
+  height: 120px;
   resize: none;
 }
 form > button {
@@ -458,8 +465,6 @@ form button:hover {
 .handles > a:hover {
   background-color: #160f35;
   border-color: #8b5cf6;
-  color: #8b5cf6;
-  transform: translateX(4px);
 }
 
 footer {
@@ -476,36 +481,20 @@ footer {
   flex-direction: column;
   gap: 6px;
   color: rgba(243, 238, 255, 0.6);
-  font-size: 0.9rem;
+  font-size: 15px;
   text-align: center;
 }
 .right p:first-child {
   font-weight: 500;
   color: #f3eeff;
 }
-.footer-icons {
+.quick-links-box {
   display: flex;
-  gap: 10px;
-  align-self: center;
+  flex-direction: column;
+  gap: 5px;
 }
-.footer-icons > a {
-  color: #f3eeff;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-size: 0.95rem;
-  padding: 14px;
-  background-color: rgba(22, 15, 53, 0.4);
-  border-radius: 8px;
-  border: 1px solid rgba(243, 238, 255, 0.05);
-  transition: all 0.2s ease;
-}
-.footer-icons > a:hover {
-  background-color: #160f35;
-  border-color: #8b5cf6;
-  color: #8b5cf6;
-  transform: translateX(4px);
+.quick-links-box h3 {
+  font-size: 15px;
 }
 .quick-links {
   display: flex;
@@ -515,10 +504,35 @@ footer {
 .quick-links > a {
   color: rgba(243, 238, 255, 0.6);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 14px;
   transition: color 0.2s ease;
 }
 .quick-links > a:hover {
+  color: #8b5cf6;
+}
+.contact-links-box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.contact-links-box h3 {
+  font-size: 15px;
+}
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.contact-links a {
+  color: rgba(243, 238, 255, 0.6);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.contact-links a:hover {
   color: #8b5cf6;
 }
 
@@ -705,7 +719,7 @@ footer {
     padding: calc(40px + 70px) 24px 40px 24px;
     gap: 30px;
     min-height: auto;
-    margin-top: 40px;
+    margin-top: 35px;
   }
   .words > p:last-child {
     margin: 0 auto;
@@ -730,12 +744,11 @@ footer {
     height: 240px;
   }
   #about,
+  #projects,
   #contact {
-    padding: 30px 24px;
+    padding: 40px 24px;
     gap: 40px;
-  }
-  #projects {
-    padding: 30px 24px;
+    height: auto;
   }
   .details {
     flex-direction: column;
@@ -766,7 +779,7 @@ footer {
     flex-direction: column;
     text-align: center;
     padding: 40px 24px;
-    gap: 24px;
+    gap: 25px;
     height: auto;
   }
   .right {
@@ -775,6 +788,11 @@ footer {
   .quick-links {
     display: flex;
     flex-direction: row;
+    align-self: center;
+  }
+  .contact-links {
+    display: flex;
+    flex-direction: column;
     align-self: center;
   }
 }
