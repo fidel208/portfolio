@@ -613,6 +613,10 @@ footer {
 .second {
   background-image: url(images/kasivodrums.png);
 }
+hr {
+  border-left: solid 1px rgba(228, 220, 248, 0.6);
+  border-right: solid 1px rgba(228, 220, 248, 0.6);
+}
 
 @media (max-width: 1024px) {
   nav {
@@ -794,5 +798,8 @@ footer {
     display: flex;
     flex-direction: column;
     align-self: center;
+  }
+  hr {
+    display: none;
   }
 }
