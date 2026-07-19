@@ -84,16 +84,19 @@ if (contactForm && formStatus) {
           "Message sent successfully! Thank you for reaching out.";
 
         if (userNumber) {
-          fetch("https://portfolio-backend-op78.onrender.com/api/portfolio-contact", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
+          fetch(
+            "https://portfolio-backend-op78.onrender.com/api/portfolio-contact",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                userNumber: userNumber,
+                userName: userName,
+              }),
             },
-            body: JSON.stringify({
-              userNumber: userNumber,
-              userName: userName,
-            }),
-          })
+          )
             .then((res) => res.json())
             .then((data) => console.log("SMS API Triggered:", data))
             .catch((err) =>
@@ -121,3 +124,10 @@ if (contactForm && formStatus) {
       });
   });
 }
+
+function getYear() {
+  const yearText = document.getElementById("year");
+  yearText.textContent = new Date().getFullYear();
+}
+
+getYear();
