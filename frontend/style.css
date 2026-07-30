@@ -608,10 +608,13 @@ footer {
   transform: translateY(0);
 }
 .first {
-  background-image: url(images/Growssify.png);
+  background-image: url(images/growssify.png);
 }
 .second {
   background-image: url(images/kasivodrums.png);
+}
+.third {
+  background-image: url(images/finoratechnologies.png);
 }
 hr {
   border-left: solid 1px rgba(228, 220, 248, 0.6);
