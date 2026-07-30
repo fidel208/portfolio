@@ -627,34 +627,35 @@ hr {
     justify-content: space-between;
     padding: 0 40px;
   }
-
   #home {
     gap: 40px;
     padding: 60px 40px;
+    height: auto;
   }
-
   .words > h2 {
     font-size: 44px;
   }
-
+  #about {
+    height: auto;
+  }
   #pic {
     width: 300px;
     height: 300px;
   }
-
   .details {
     gap: 40px;
   }
-
   #picture {
     width: 260px;
     height: 280px;
   }
-
   .contact-details {
     gap: 40px;
   }
-
+  #projects {
+    height: auto;
+    padding-bottom: 50px;
+  }
   footer {
     padding: 40px;
     justify-content: space-between;
