@@ -656,6 +656,9 @@ hr {
     height: auto;
     padding-bottom: 50px;
   }
+  #contact {
+    height: 60dvh;
+  }
   footer {
     padding: 40px;
     justify-content: space-between;
