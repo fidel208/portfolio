@@ -657,7 +657,8 @@ hr {
     padding-bottom: 50px;
   }
   #contact {
-    height: 60dvh;
+    height: auto;
+    padding-bottom: 50px;
   }
   footer {
     padding: 40px;
