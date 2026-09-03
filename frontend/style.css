@@ -180,7 +180,7 @@ main {
   padding: 80px 40px;
   display: flex;
   flex-direction: column;
-  height: 92dvh;
+  height: auto;
   gap: 80px;
   width: 100%;
 }
