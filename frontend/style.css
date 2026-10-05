@@ -10,8 +10,8 @@ html {
   scroll-padding-top: 10dvh;
 }
 body {
-  background-color: #f8f2de;
-  color: #946d6d;
+  background-color: #0c2a5a;
+  color: white;
   font-family: "Ubuntu", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -32,18 +32,19 @@ nav {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: #f8f2de;
+  background-color: #0e2954;
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(139, 92, 246, 0.1);
 }
 nav > h1 {
   font-size: 26px;
   font-weight: 700;
+  color: #ff6500;
 }
 .menu-icon {
   display: none;
   cursor: pointer;
-  color: #f3eeff;
+  color: #ff6500;
 }
 .links {
   display: flex;
@@ -51,7 +52,7 @@ nav > h1 {
   gap: 40px;
 }
 .links > a {
-  color: #946d6d;
+  color: #ff6500;
   font-size: 18px;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -60,8 +61,8 @@ nav > h1 {
 
 .links > a:hover,
 .links > a.active {
-  color: #946d6d;
-  border-bottom: solid 2px #946d6d;
+  color: #ff6500;
+  border-bottom: solid 2px #ff6500;
 }
 
 main {
@@ -69,7 +70,7 @@ main {
   flex-direction: column;
 }
 .home-container {
-  background-color: #fcf7e8;
+  background-color: #0e2954;
 }
 #home {
   display: flex;
@@ -101,6 +102,7 @@ main {
   font-size: 54px;
   font-weight: 700;
   line-height: 1.1;
+  color: #ff6500;
 }
 .title {
   font-weight: 700;
@@ -122,7 +124,7 @@ main {
   color: white;
 }
 .buttons > a > button {
-  background-color: #946d6d;
+  background-color: #ff6500;
   color: white;
   border: none;
   padding: 14px 28px;
@@ -140,14 +142,14 @@ main {
 }
 .buttons > a > button:hover {
   transform: translateY(-2px);
-  background-color: #533c3c;
+  background-color: #b34801;
 }
 .buttons > button > a {
   color: white;
   text-decoration: none;
 }
 .buttons > button:hover {
-  background-color: #946d6d;
+  background-color: #ff6500;
   transform: translateY(-2px);
 }
 .icons {
@@ -155,14 +157,14 @@ main {
   gap: 18px;
 }
 .icons > a {
-  color: #946d6d;
+  color: #ff6500;
   font-size: 22px;
   transition:
     color 0.2s ease,
     transform 0.2s ease;
 }
 .icons > a:hover {
-  color: #946d6d;
+  color: #f06102;
   transform: scale(1.15);
 }
 #pic {
@@ -177,41 +179,6 @@ main {
   border: 2px solid rgba(139, 92, 246, 0.2);
   box-shadow: 0 0 40px rgba(139, 92, 246, 0.15);
 }
-.slide-wrap {
-  margin-top: 50px;
-  width: 100%;
-  overflow: hidden;
-  padding: 12px 0;
-  white-space: nowrap;
-}
-.slide {
-  display: flex;
-  flex-direction: row;
-  width: max-content;
-  gap: 30px;
-  animation: scrollText 25s linear infinite;
-}
-#slide-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 200px;
-  padding: 3px 10px;
-  color: #946d6d;
-  background-color: rgb(240, 235, 235);
-  border: solid 1px #946d6d;
-  border-radius: 5px;
-  white-space: nowrap;
-}
-@keyframes scrollText {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
 #about {
   max-width: 1300px;
   margin: 0 auto;
@@ -241,10 +208,15 @@ main {
 .bio {
   display: flex;
   flex-direction: column;
-  gap: 16px;
 }
 .bio > h2 {
-  font-size: 32px;
+  font-size: 20px;
+  color: #359aaa;
+}
+.bio h3 {
+  font-weight: normal;
+  font-size: 30px;
+  color: #ff6500;
 }
 .bio > p {
   font-size: 1.1rem;
@@ -253,12 +225,16 @@ main {
 .skills {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  border-top: 1px solid rgba(243, 238, 255, 0.05);
   padding-top: 40px;
 }
 .skills > h2 {
-  font-size: 28px;
+  font-size: 20px;
+  color: #359aaa;
+}
+.skills h3 {
+  color: #ff6500;
+  font-weight: normal;
+  margin-bottom: 30px;
 }
 .skill-info {
   display: grid;
@@ -267,16 +243,16 @@ main {
 }
 .skill-info > span {
   display: block;
-  background-color: #f8f2de;
+  background-color: #0c2a5a;
   padding: 24px;
   border-radius: 10px;
-  border: 1px solid #946d6d;
+  border: 1px solid #359aaa;
   transition: transform 0.2s ease;
 }
 .skill-info > span:hover {
   transform: translateY(-5px);
 }
-.skill-info h3 {
+.skill-info h4 {
   margin-bottom: 16px;
   font-size: 1.5rem;
 }
@@ -298,7 +274,7 @@ main {
   font-weight: bold;
 }
 .projects-container {
-  background-color: #fcf7e8;
+  background-color: #0e2954;
 }
 #projects {
   max-width: 1300px;
@@ -307,14 +283,16 @@ main {
   display: flex;
   flex-direction: column;
   height: 92dvh;
-  gap: 10px;
   width: 100%;
 }
 #projects > h2 {
-  font-size: 32px;
+  font-size: 20px;
+  color: #359aaa;
 }
 #projects > p {
   margin-bottom: 10px;
+  color: #ff6500;
+  font-size: 30px;
 }
 .projects {
   display: grid;
@@ -322,10 +300,10 @@ main {
   gap: 50px;
 }
 .project {
-  background-color: #f8f2de;
+  background-color: #0e2954;
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid #946d6d;
+  border: 1px solid #173f80;
   display: flex;
   flex-direction: column;
   min-height: 400px;
@@ -377,8 +355,8 @@ main {
   padding: 0 20px 20px 20px;
 }
 #project-buttons > button {
-  background-color: rgb(167, 143, 143);
-  border: 1px solid #946d6d;
+  background-color: #092046;
+  border: 1px solid #0c2a5a;
   border-radius: 6px;
   cursor: pointer;
   padding: 0;
@@ -398,7 +376,7 @@ main {
   transition: color 0.2s ease;
 }
 #project-buttons > button:hover {
-  background-color: #946d6d;
+  background-color: #0f3269;
   border-color: #946d6d;
   transform: translateY(-2px);
 }
@@ -422,10 +400,13 @@ main {
   gap: 50px;
 }
 #contact > h2 {
-  font-size: 32px;
+  font-size: 20px;
+  color: #359aaa;
 }
 #contact > p {
   margin-bottom: 40px;
+  font-size: 30px;
+  color: #ff6500;
 }
 .contact-details {
   display: flex;
@@ -448,11 +429,11 @@ form label {
 }
 form input,
 form textarea {
-  border: 1px solid #c2bdac;
+  border: 1px solid #a19d90;
   padding: 14px;
   border-radius: 8px;
-  background-color: #f8f2de;
-  color: #946d6d;
+  background-color: #0c2a5a;
+  color: white;
   font-family: inherit;
   font-size: 0.95rem;
   outline: none;
@@ -460,14 +441,14 @@ form textarea {
 }
 form input:focus,
 form textarea:focus {
-  border-color: #946d6d;
+  border-color: #359aaa;
 }
 form textarea {
   height: 120px;
   resize: none;
 }
 form > button {
-  background-color: #946d6d;
+  background-color: #ff6500;
   color: white;
   padding: 14px;
   border: none;
@@ -481,7 +462,7 @@ form > button {
   padding: 12px 30px;
 }
 form button:hover {
-  background-color: #6b4f4f;
+  background-color: #913c03;
 }
 #form-status {
   font-size: 0.9rem;
@@ -506,17 +487,16 @@ form button:hover {
   font-size: 0.95rem;
   padding: 10px 14px;
   border-radius: 8px;
-  color: #946d6d;
+  color: white;
   transition: all 0.3s ease;
-  border: solid 1px rgb(199, 198, 198);
+  border: solid 1px #afaead;
 }
 .handles > a:hover {
-  border: solid 1px #946d6d;
+  border: solid 1px #359aaa;
 }
 footer {
-  background-color: #412b2b;
+  background-color: #082444;
   padding: 50px 0;
-  border-top: 1px solid #946d6d;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -526,12 +506,12 @@ footer {
   font-size: 20px;
 }
 footer a {
-  color: #fcf7e8;
+  color: #eefdff;
   text-decoration: none;
   font-size: 18px;
 }
 footer a:hover {
-  color: #bbb7a7;
+  color: #359aaa;
 }
 .footer-items {
   display: flex;
@@ -734,7 +714,6 @@ hr {
   }
   .menu-icon {
     display: block;
-    color: #946d6d;
   }
   .links {
     gap: 0px;
@@ -746,7 +725,7 @@ hr {
     width: 150px;
     right: 0;
     border-bottom-left-radius: 12px;
-    background-color: #f8f2de;
+    background-color: #0e2954;
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(139, 92, 246, 0.15);
     z-index: 1000;
@@ -807,9 +786,12 @@ hr {
   #about,
   #projects,
   #contact {
-    padding: 40px 24px;
-    gap: 40px;
+    padding: 30px 24px;
     height: auto;
+  }
+  #projects > p,
+  #contact > p {
+    font-size: 22px;
   }
   .details {
     flex-direction: column;
