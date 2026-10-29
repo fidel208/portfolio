@@ -787,6 +787,9 @@ hr {
   #contact > p {
     font-size: 22px;
   }
+  .skill-info span {
+    width: 95%;
+  }
   .details {
     flex-direction: column;
     text-align: center;
