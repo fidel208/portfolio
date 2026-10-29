@@ -172,9 +172,6 @@ main {
   width: 360px;
   height: 360px;
   flex-shrink: 0;
-  background-image: url(images/myPic.jpg);
-  background-position: center;
-  background-size: cover;
   border-radius: 50%;
   border: 2px solid rgba(139, 92, 246, 0.2);
   box-shadow: 0 0 40px rgba(139, 92, 246, 0.15);
@@ -199,9 +196,6 @@ main {
   width: 300px;
   height: 320px;
   flex-shrink: 0;
-  background-image: url(images/myPic.jpg);
-  background-position: center;
-  background-size: cover;
   border-radius: 12px;
   border: 1px solid rgba(243, 238, 255, 0.1);
 }
@@ -807,6 +801,7 @@ hr {
   }
   .project {
     min-height: auto;
+    width: 95%;
   }
   .contact-details {
     flex-direction: column;
