@@ -1,15 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poller+One&family=Saira:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
 :root {
-  --bg-primary: #faf7f2;
-  --bg-darker: #efe9de;
-  --surface-card: #ffffff;
-  --surface-border: #e8e1d5;
-  --text-primary: #181512;
-  --text-secondary: #5c5349;
-  --accent-primary: #b4692b;
-  --accent-hover: #94531e;
-  --accent-tint: #f5ece3;
+  --bg-primary: #080e1a;
+  --surface-card: #0f172a;
+  --surface-nested: #162033;
+  --surface-border: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent-primary: #38bdf8;
+  --accent-hover: #0ea5e9;
+  --accent-tint: rgba(56, 189, 248, 0.12);
+  --accent-tint-text: #7dd3fc;
 }
 
 * {
@@ -44,7 +45,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: rgba(250, 247, 242, 0.92);
+  background-color: rgba(8, 14, 26, 0.9);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--surface-border);
 }
@@ -114,19 +115,19 @@ main {
   font-size: 54px;
   font-weight: 700;
   line-height: 1.1;
-  color: var(--accent-primary);
+  color: var(--text-primary);
 }
 .title {
   font-weight: 700;
   font-size: 1.15rem;
   letter-spacing: 0.5px;
-  color: var(--text-secondary);
+  color: var(--accent-primary);
 }
 .words > p:last-child {
   font-size: 1.1rem;
   line-height: 1.6;
   max-width: 500px;
-  color: var(--text-primary);
+  color: var(--text-secondary);
 }
 .buttons {
   display: flex;
@@ -135,11 +136,10 @@ main {
 }
 .buttons > a {
   text-decoration: none;
-  color: #ffffff;
 }
 .buttons > a > button {
   background-color: var(--accent-primary);
-  color: #ffffff;
+  color: #080e1a;
   border: none;
   padding: 14px 28px;
   font-size: 1rem;
@@ -152,14 +152,14 @@ main {
   gap: 10px;
   transition:
     transform 0.2s ease,
-    background-color 0.4s ease;
+    background-color 0.3s ease;
 }
 .buttons > a > button:hover {
   transform: translateY(-2px);
   background-color: var(--accent-hover);
 }
 .buttons > button > a {
-  color: #ffffff;
+  color: #080e1a;
   text-decoration: none;
 }
 .buttons > button:hover {
@@ -188,7 +188,7 @@ main {
   flex-shrink: 0;
   border-radius: 50%;
   border: 3px solid var(--surface-border);
-  box-shadow: 0 8px 30px rgba(24, 21, 18, 0.08);
+  box-shadow: 0 0 35px rgba(56, 189, 248, 0.15);
   background-image: url(images/image2.jpg);
   background-size: cover;
 }
@@ -217,7 +217,7 @@ main {
   flex-shrink: 0;
   border-radius: 12px;
   border: 1px solid var(--surface-border);
-  box-shadow: 0 4px 20px rgba(24, 21, 18, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 .bio {
   display: flex;
@@ -225,17 +225,17 @@ main {
 }
 .bio > h2 {
   font-size: 20px;
-  color: var(--text-secondary);
+  color: var(--accent-primary);
 }
 .bio h3 {
-  font-weight: normal;
+  font-weight: 700;
   font-size: 30px;
-  color: var(--accent-primary);
+  color: var(--text-primary);
 }
 .bio > p {
   font-size: 1.1rem;
   line-height: 1.7;
-  color: var(--text-primary);
+  color: var(--text-secondary);
 }
 .skills {
   display: flex;
@@ -244,11 +244,12 @@ main {
 }
 .skills > h2 {
   font-size: 20px;
-  color: var(--text-secondary);
+  color: var(--accent-primary);
 }
 .skills h3 {
-  color: var(--accent-primary);
-  font-weight: normal;
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 30px;
   margin-bottom: 30px;
 }
 .skill-info {
@@ -262,21 +263,18 @@ main {
   padding: 24px;
   border-radius: 10px;
   border: 1px solid var(--surface-border);
-  box-shadow: 0 2px 12px rgba(24, 21, 18, 0.04);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .skill-info > span:hover {
   transform: translateY(-5px);
   border-color: var(--accent-primary);
-  box-shadow: 0 8px 24px rgba(180, 105, 43, 0.12);
+  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.15);
 }
 .skill-info h4 {
   margin-bottom: 16px;
   font-size: 1.5rem;
-  color: var(--accent-primary);
+  color: var(--text-primary);
 }
 .skill-info ul {
   list-style: none;
@@ -310,12 +308,13 @@ main {
 }
 #projects > h2 {
   font-size: 20px;
-  color: var(--text-secondary);
+  color: var(--accent-primary);
 }
 #projects > p {
-  margin-bottom: 10px;
-  color: var(--accent-primary);
+  margin-bottom: 20px;
+  color: var(--text-primary);
   font-size: 30px;
+  font-weight: 700;
 }
 .projects {
   display: grid;
@@ -330,16 +329,13 @@ main {
   display: flex;
   flex-direction: column;
   min-height: 400px;
-  box-shadow: 0 4px 16px rgba(24, 21, 18, 0.05);
-  transition:
-    0.5s ease transform,
-    0.3s ease box-shadow,
-    0.3s ease border-color;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .project:hover {
   transform: translateY(-5px);
   border-color: var(--accent-primary);
-  box-shadow: 0 10px 28px rgba(180, 105, 43, 0.12);
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.15);
 }
 #project-pic {
   display: block;
@@ -377,7 +373,7 @@ main {
 }
 #project-details > p {
   font-size: 0.95rem;
-  line-height: 1.5;
+  line-height: 1.6;
   color: var(--text-secondary);
 }
 #project-buttons {
@@ -386,7 +382,7 @@ main {
   padding: 0 20px 20px 20px;
 }
 #project-buttons > button {
-  background-color: var(--accent-tint);
+  background-color: var(--surface-nested);
   border: 1px solid var(--surface-border);
   border-radius: 6px;
   cursor: pointer;
@@ -404,7 +400,7 @@ main {
   width: 42px;
   height: 42px;
   text-decoration: none;
-  color: var(--accent-primary);
+  color: var(--text-secondary);
   transition: color 0.2s ease;
 }
 #project-buttons > button:hover {
@@ -413,7 +409,7 @@ main {
   transform: translateY(-2px);
 }
 #project-buttons > button:hover > a {
-  color: #ffffff;
+  color: #080e1a;
 }
 #inactive {
   pointer-events: none;
@@ -436,12 +432,13 @@ main {
 }
 #contact > h2 {
   font-size: 20px;
-  color: var(--text-secondary);
+  color: var(--accent-primary);
 }
 #contact > p {
   margin-bottom: 40px;
   font-size: 30px;
-  color: var(--accent-primary);
+  font-weight: 700;
+  color: var(--text-primary);
 }
 .contact-details {
   display: flex;
@@ -468,24 +465,22 @@ form textarea {
   border: 1px solid var(--surface-border);
   padding: 14px;
   border-radius: 8px;
-  background-color: var(--surface-card);
+  background-color: var(--surface-nested);
   color: var(--text-primary);
   font-family: inherit;
   font-size: 0.95rem;
   outline: none;
-  transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 form input::placeholder,
 form textarea::placeholder {
   color: var(--text-secondary);
-  opacity: 0.7;
+  opacity: 0.6;
 }
 form input:focus,
 form textarea:focus {
   border-color: var(--accent-primary);
-  box-shadow: 0 0 0 3px var(--accent-tint);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
 }
 form textarea {
   height: 120px;
@@ -493,7 +488,7 @@ form textarea {
 }
 form > button {
   background-color: var(--accent-primary);
-  color: #ffffff;
+  color: #080e1a;
   padding: 14px;
   border: none;
   border-radius: 8px;
@@ -501,9 +496,7 @@ form > button {
   cursor: pointer;
   font-size: 1rem;
   font-family: inherit;
-  transition:
-    background-color 0.2s,
-    transform 0.2s;
+  transition: background-color 0.2s, transform 0.2s;
   align-self: flex-start;
   padding: 12px 30px;
 }
@@ -538,7 +531,7 @@ form button:hover {
   background-color: var(--surface-card);
   transition: all 0.3s ease;
   border: solid 1px var(--surface-border);
-  box-shadow: 0 2px 8px rgba(24, 21, 18, 0.03);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 .handles > a i {
   color: var(--accent-primary);
@@ -546,12 +539,12 @@ form button:hover {
 }
 .handles > a:hover {
   border: solid 1px var(--accent-primary);
-  background-color: var(--accent-tint);
-  color: var(--accent-hover);
+  background-color: var(--surface-nested);
+  color: var(--accent-primary);
   transform: translateX(4px);
 }
 footer {
-  background-color: var(--bg-darker);
+  background-color: var(--surface-card);
   border-top: 1px solid var(--surface-border);
   padding: 60px 0 40px 0;
   display: flex;
@@ -799,7 +792,7 @@ hr {
     backdrop-filter: blur(12px);
     border: 1px solid var(--surface-border);
     border-top: none;
-    box-shadow: 0 10px 25px rgba(24, 21, 18, 0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
     z-index: 1000;
     max-height: 0;
     overflow: hidden;
